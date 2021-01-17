@@ -1,0 +1,29 @@
+[Unit]
+Description=v2ray transparent
+After=v2backend.service
+
+[Service]
+#Type=forking
+#PIDFile=
+#ExecStart=
+#ExecStop=
+
+#Type=oneshot
+#RemainAfterExit=yes
+#ExecStart=
+#ExecStop=
+
+Type=simple
+ExecStartPre=START_PRE
+ExecStart=V2RAY -c CONFIG
+#ExecStartPost=
+
+#ExecStop=
+ExecStopPost=STOP_POST
+
+#User=USER
+#WorkingDirectory=/path/to/wd
+#Restart=always
+#Environment=
+[Install]
+WantedBy=multi-user.target
